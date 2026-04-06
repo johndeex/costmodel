@@ -1,27 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Projects</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
-<body class="container-fluid py-1">
+@extends('layouts.main')
+@section('page_title','Reports')
 
-    @include('layouts.layout')
+@section('content')
 
-    <div class="container-fluid mt-4">
-        <h2>Reports</h2>
+    <div class="container-fluid mt-5">
+       <h2 class="mx-3">All Projects</h2>
 
-        <a href="{{ route('completed_proje.show') }}" class="btn btn-warning mx-3 mb-3">
+        <a href="{{ route('completed_proje.show') }}" class="btn btn-warning mx-3 mb-3 mt-3">
             Completed Projects
         </a>
-        <a href="{{ route('active_proje.show') }}" class="btn btn-warning mx-3 mb-3">
+        <a href="{{ route('active_proje.show') }}" class="btn btn-warning mx-3 mb-3 mt-3">
             Active projects
         </a>
-        <button class="btn btn-success mx-3 mb-3" onclick="downloadPdf2()">
+        <button class="btn btn-success mx-3 mb-3 mt-3" onclick="downloadPdf2()">
            <i class="bi bi-download"></i> Download-Pdf
         </button>
 
@@ -70,8 +61,7 @@
             @endforelse
         </tbody>
     </table>
-    <a class="btn btn-sm btn-warning" href="{{ route('projects.index') }}">Back</a>
    </div>
-</div>
-</body>
-</html>
+</div>  
+
+@endsection

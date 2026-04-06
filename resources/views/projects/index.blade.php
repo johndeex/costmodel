@@ -1,25 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Projects</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
-<body class="container-fluid py-1">
+@extends('layouts.main')
+@section('page_title','Projects')
+@section('content')
 
-    @include('layouts.layout')
 
+    <div class="container-fluid py-1 mt-4">
     <div class="container-fluid mt-4">
-        <h2>Projects</h2>
-
-        <a href="{{ route('projects.create') }}" class="btn btn-warning mb-3">
-            + New Project
-        </a>
-        <a href="{{ route('projects.all') }}" class="btn mx-2 btn-warning mb-3">All Projects</a>
-
         @if(Session::has('success'))
         <div aria-live="polite" aria-atomic="true" class="position-relative">
             <div class="toast-container position-fixed top-0 p-3">
@@ -36,7 +21,7 @@
         @endif
    <div class="container-fluid">
     <h3>Active Projects</h3>
-     <table class="table table-striped border">
+     <table class="table table-striped  mt-3">
         <thead class="table-secondary">
             <tr>
                 <th>#</th>
@@ -71,12 +56,12 @@
             @endforelse
         </tbody>
     </table>
-    <a class="btn btn-sm btn-warning" href="{{ route('home.show') }}">Back</a>
     <div class="d-flex justify-content-end mt-0">
        {{ $projects->links('pagination::bootstrap-5') }}
     </div>
    </div>
    
 </div>
-</body>
-</html>
+
+@endsection
+

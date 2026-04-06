@@ -1,23 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Create Project</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <style>
-        body{
-            background: rgba(128, 128, 128, 0.055);
-        }
-    </style>
-</head>
-<body class="container-fluid py-4">
+@extends('layouts.main')
+@section('page_title','Projects')
+@section('content')
 
-    @include('layouts.layout')
-    <div class="container-fluid">
+  <div class="container-fluid mt-5">
         <h3 class="mt-3">Create New Project</h3>
 
     @if ($errors->any())
@@ -65,10 +50,7 @@
         </div>
 
         <button class="btn btn-warning">Create Project</button>
-
-        <a href="{{ route('home.show') }}" class="btn btn-danger">Back</a>
     </form>
     </div>
-    
-</body>
-</html>
+
+@endsection

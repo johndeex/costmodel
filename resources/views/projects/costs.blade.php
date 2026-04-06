@@ -1,17 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Costs</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
-<body class="container-fluid py-1">
-    @include('layouts.layout')
-
-    <div class="container-fluid mt-4">
+@extends('layouts.main')
+@section('page_title','Project-Costs')
+@section('content')
+     <div class="container-fluid mt-5">
             <h2 class="mb-4">{{ ucfirst($project->name) }}</h2>
             <a href="{{ route('show.profit',$project->id) }}" class="btn btn-warning mb-3">
                 Project Profit
@@ -21,7 +11,7 @@
                 <a class="btn btn-sm btn-warning" href="{{ route('show.profit',$project->id) }}" id="profit">Project Profits</a>
             </div> --}}
         <div class="container-fluid">
-            <table class="table table-striped border">
+            <table class="table table-striped ">
                 <thead class="table-secondary">
                     <tr>
                         <th>#</th>
@@ -65,7 +55,6 @@
                 </tbody>
                 
             </table>
-            <a class="btn btn-sm btn-warning" href="{{ route('projects.index') }}">Back</a>
         </div>
      
     
@@ -74,5 +63,4 @@
         {{ $project_costs->links('pagination::bootstrap-5') }}
         </div> --}}
    </div>
-</body>
-</html>
+@endsection

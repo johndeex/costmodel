@@ -1,46 +1,75 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Projects</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-        body{
-            background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)),url("{{ asset('images/bg2.jpg') }}");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
-        #logo {
-        max-height: 150px;          
-        width: auto;                
-        height: auto;               
-        position: absolute;
-        top: 2%;
-        left: -2%;
-        border-radius: 50%;         
-        padding: 5px;                
-      }
-    </style>
-</head>
-<body>
-<img id="logo" src="{{ asset('images/logo.png') }}" alt="">
-  <div class="d-flex justify-content-center align-items-center vh-100">
-    <div class="text-center">
-      <a href="{{ route('projects.create') }}" class="btn btn-warning m-2">
-        +Create Project
-      </a>
-      <a href="{{ route('projects.index') }}" class="btn btn-success m-2">
-         View Projects
-      </a>
+@extends('layouts.main')
+ <style>
+  .dash1{
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 2px;
+    height: 200px;
+    border-radius: 6px;
+    box-shadow: 1px  1px 1px 1px #8080804e;
+  }
+  .dash2{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+  }
+ </style>
+ 
+@section('content')
+  <div class="container mt-5">
+    <div class="row d-flex justify-content-between">
+        <div class="col dash1" >
+          
+          <h4 class="text-warning font-bold">Active Projects</h4>
+          <div class="container dash2">
+            <i i class="bi bi-list-task" style="font-size: 1.5rem"></i>
+            <p class="font-bold" style="font-size: 1.5rem">4</p>
+          </div>
+
+        </div>
+        <div class="col mx-1 dash1 ">
+          <h4 class="text-warning font-bold">Completed Projects</h4>
+          <div class="container dash2">
+            <i class="bi bi-list-check" style="font-size: 1.5rem"></i>
+            <p class="font-bold" style="font-size: 1.5rem">4</p>
+          </div>
+        </div>
+        <div class="col dash1">
+          <h4 class="text-warning font-bold">Outstanding invoices</h4>
+          <div class="container dash2">
+            <i class="bi bi-receipt-cutoff" style="font-size: 1.5rem"></i>
+            <p class="font-bold" style="font-size: 1.5rem">4</p>
+          </div>
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-between mt-4">
+        <div class="col dash1" >
+          <h4>Total monthly revenue</h4>
+        </div>
+        <div class="col mx-1 dash1">
+          <h4>	Total outstanding payments</h4>
+        </div>
+        <div class="col dash1">
+          <h4>	Estimated profit per job</h4>
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-between mt-4">
+        <div class="col dash1" >
+
+        </div>
+        <div class="col mx-1 dash1">
+
+        </div>
+        <div class="col dash1">
+
+        </div>
     </div>
   </div>
-
-  <!-- Bootstrap JS Bundle (for components if needed) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+@endsection
+ 
